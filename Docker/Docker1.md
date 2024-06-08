@@ -1,6 +1,7 @@
-Docker is a tool designed to package software into containers, effectively virtualizing the operating system. Each container acts as an isolated sandbox. Here I'm going to follow notes from Internet 
+Docker is a tool designed to package software into containers, effectively virtualizing the operating system. Each container acts as an isolated sandbox. Here I'm going to follow notes from Internet.
 - https://docker-curriculum.com/
 - https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+
 # Installation
 
 -  setting up a docker repo:
@@ -63,3 +64,6 @@ Congratulations, docker is installed on your machine via `apt`.
 
 Surprisingly it doesn't run without `sudo`, execution command is
 `docker run hello-world`. It can be solved with creating a group with permission rights.
+
+
+[Docker page 2](./Docker/Docker1.md)

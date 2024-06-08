@@ -4,7 +4,7 @@
 
 [Computer science](./computer_science.md)
 
-[DOcker](./Docker/Docker1.md)
+[Docker](./Docker/Docker1.md)
 
 
 ## News:
