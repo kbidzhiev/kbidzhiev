@@ -63,7 +63,9 @@ For more examples and ideas, visit:
 Congratulations, docker is installed on your machine via `apt`.
 
 Surprisingly it doesn't run without `sudo`, execution command is
-`docker run hello-world`. It can be solved with creating a group with permission rights.
+```
+docker run hello-world
+```. It can be solved with creating a group with permission rights.
 
 
 [Docker page 2](./Docker2.md)
