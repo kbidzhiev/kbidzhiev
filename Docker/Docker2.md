@@ -1,14 +1,13 @@
 # Your first container [BusyBox](https://en.wikipedia.org/wiki/BusyBox) - "The Swiss Army knife of Embedded Linux"
 
-BusyBox is meant to reproduce Unix-like terminal input and output interactions.
-This page is going to demonstarte how to run a basic container and check its current and previous statuses.
+BusyBox is designed to emulate Unix-like terminal input and output interactions. This page will demonstrate how to run a basic container and review its current and previous statuses.
 
-Firstly, to get started working, pull the container image to your system.
+First, to begin working, pull the container image onto your system.
 ```bash
 sudo docker pull busybox
 ```
 
-output is 
+the output is
 ```plaintext
 Using default tag: latest
 latest: Pulling from library/busybox
@@ -29,15 +28,18 @@ ubuntu        latest    17c0145030df   9 days ago      76.2MB
 busybox       latest    65ad0d468eb1   12 months ago   4.26MB
 hello-world   latest    d2c94e258dcb   13 months ago   13.3kB
 ```
-Running the container with
+
+Running the container with a command similar to 'hello-world' as shown below:
 ```bash
 sudo docker run busybox
 ```
-displays nothing. It's similar to pressing 'enter' command in an empty shell promt. In order to see some responce, run
+produces no output. The effect of the above command is akin to pressing 'enter' after an empty command in a real Unix terminal. To see a response, you should run:
 ```bash
 sudo docker run busybox echo "hello from busybox"
 ```
-Moreover, one can get an interactive terminal with `-it` command
+
+This command explicitly instructs the BusyBox container to execute the `echo` command and output "hello from busybox".
+Also, one can get an interactive terminal with `-it` command
 ```bash
 sudo docker run -it busybox sh
 ```
