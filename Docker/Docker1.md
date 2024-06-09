@@ -26,8 +26,8 @@ Docker is a tool designed to package software into containers, effectively virtu
       sudo docker run hello-world
 ```
 
-######
-```bash
+#####
+```<bash>
    sudo docker run hello-world
 ```
 
