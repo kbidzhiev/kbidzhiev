@@ -4,7 +4,7 @@ Docker is a tool designed to package software into containers, effectively virtu
 
 # Installation
 
--  setting up a docker repo:
+1. Setting up a docker repo:
 ```bash
    sudo apt-get update
    sudo apt-get install ca-certificates curl
@@ -17,11 +17,16 @@ Docker is a tool designed to package software into containers, effectively virtu
      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
    sudo apt-get update
 ```
-- Install the Docker packages
+2. Install the Docker packages
 ```bash
    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
-- Verify that the Docker Engine installation is successful by running the hello-world image
+3. Verify that the Docker Engine installation is successful by running the hello-world image
+```bash
+      sudo docker run hello-world
+```
+
+######
 ```bash
    sudo docker run hello-world
 ```
