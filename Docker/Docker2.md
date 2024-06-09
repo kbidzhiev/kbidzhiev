@@ -72,4 +72,17 @@ The first column `CONTAINER ID` allows you to chose and delete several container
 sudo docker rm b74e885e4a92 95078a9c5748
 ```
 
+
+# Terminology
+
+In the previous section, we introduced several Docker-specific terms that might be unfamiliar to some. To ensure clarity as we move forward, let's define some frequently used terminology within the Docker ecosystem:
+
+- **Images**: Think of these as the blueprints for our applications, serving as the foundation for containers. In the demonstration mentioned earlier, we utilized the `docker pull` command to download the BusyBox image.
+- **Containers**: These are the instances created from Docker images that execute the actual applications. For instance, we created a container using the `docker run` command with the BusyBox image we downloaded. You can view a list of all active and inactive containers using the `docker ps` and `docker ps -a` commands.
+- **Docker Daemon**: This is a background service that operates on the host and manages the building, running, and distribution of Docker containers. The daemon is the process within the operating system that interacts with clients.
+- **Docker Client**: This command-line tool enables users to communicate with the daemon. There are also alternative client forms, such as Kitematic, which provides a graphical user interface (GUI) for user interaction.
+- **Docker Hub**: A [registry](https://hub.docker.com/explore/) for Docker images, which can be likened to a directory of all available Docker images. Users have the option to host their own Docker registries, which can be utilized for downloading images.
+
+These definitions should help you navigate the Docker environment more effectively and understand its various components.
+
 [Docker page 3](./Docker3.md)
