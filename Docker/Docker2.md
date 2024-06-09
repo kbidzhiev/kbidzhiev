@@ -48,11 +48,14 @@ sudo docker run -it busybox sh
 # Cleaning up
 The command `docker run` leaves behind large files after each execution. If you do not intend to use them, please ensure they are cleaned up.
 
-To check what remains run
+To see what remains after running containers, use the following command:
 ```bash
-sudo docker ps -a # sudo docker ps  lists active containers
+sudo docker ps -a
+#sudo docker ps #lists active containers
 ```
-witht he following output
+This command lists all containers, including those that are not currently active. The `-a` option shows all containers, both running and stopped, providing a complete overview of the container instances on your system.
+
+The output reads
 ```
 CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                        PORTS     NAMES
 958b2077eca9   busybox       "sh"                     11 minutes ago   Exited (127) 10 minutes ago             condescending_bartik
