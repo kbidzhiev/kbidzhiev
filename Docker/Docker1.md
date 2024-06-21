@@ -18,8 +18,9 @@ In the next sections you are going to hear about:
 
 Containers can be stacked on top of each other like LEGO building blocks. First, consider an OS container as the ground floor, Ubuntu for example. Then, a Python container serves as the first floor, and on the top, your Python application acts as the second floor.
 
-<img src="./dockerhub.png" alt="DockerHub images for programming languages" width="500" height="300" style="float: right; margin-right: 10px;">
-
+<a href="https://hub.docker.com/search?q=&image_filter=official&categories=Languages%20%26%20Frameworks" target="Docker Hub">
+   <img src="./dockerhub.png" alt="DockerHub images for programming languages" width="500" height="300" style="float: right; margin-right: 10px;">
+</a>
 The containerisation idea has become so popular that there are plenty of web pages with many already built images for you, like [https://hub.docker.com/](https://hub.docker.com/). In all of these cases there is no need to build everything from the ground, it's already there. A container on the top of the stack knows which container to pull next in this "chain reaction". And if you want to build your own image and container, the good starting point is to use one of these ones from the picture above.
 
 
