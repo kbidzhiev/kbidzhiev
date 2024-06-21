@@ -27,11 +27,13 @@ The containerisation idea has become so popular that there are plenty of web pag
 
 
 Let's go step by step and learn how to use them. In the following pages we are going to discuss
-- Installation
-- etc
+- [Installation](#installation)
+- [Using Python in the container](./Docker2.md)
 
 
-# Installation
+
+<h1 id="installation">Installation</h1>
+
 
 1. Setting up a docker repo and installing the Docker packages:
 ```bash
@@ -47,7 +49,7 @@ Let's go step by step and learn how to use them. In the following pages we are g
    sudo apt-get update
    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
-2. Verify that the Docker Engine installation is successful by running the hello-world image
+1. Verify that the Docker Engine installation is successful by running the hello-world image
 ```bash
 sudo docker run hello-world
 ```
@@ -101,4 +103,4 @@ docker ps
 ```
 
 
-[Docker page 2](./Docker2.md)
+[Docker page 2. Using Python in the container](./Docker2.md)
