@@ -56,11 +56,23 @@ For more examples and ideas, visit:
 
 Congratulations, docker is installed on your machine via `apt`.
 
-Execution command surprisingly doesn't run without `sudo`
+Execution command doesn't simply run without `sudo`
 ```bash
-sudo docker run hello-world
+docker ps
+```
+Gives the error
+```text
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/json": dial unix /var/run/docker.sock: connect: permission denied
 ```
 The problem can be solved with creating a group with permission rights.
+```
+sudo usermod -aG docker YOUR_USERNAME # username can be found with `whoami` command
+newgrp docker
+```
+now the command should work
+```bash
+docker ps
+```
 
 
 [Docker page 2](./Docker2.md)
