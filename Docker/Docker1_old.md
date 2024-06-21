@@ -1,28 +1,6 @@
-# The main idea
-Software instalation is cumbersome for big projects, especially when it requires additional technical knowledge more then `pip install ...`
-One of the solution is to pack the installed software into big "`zip`" file with all its dependencies, additional configurations and even OS. This "`zip`" strategy is called docker.
-
 Docker is a tool designed to package software into containers, effectively virtualizing the operating system. Each container acts as an isolated sandbox. Here I'm going to follow notes from Internet.
-- https://www.youtube.com/@TechWorldwithNana/videos
 - https://docker-curriculum.com/
 - https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
-
-# Some terminology
-You are going to hear about:
-  - docker image\
-      it is an instruction == blueprint for building a corresponding docker container
-  - docker container\
-      "zipped" software, e.g python application, python language or OS
-
-Containers can be stacked on top of each other like LEGO building blocks. First, an OS container like the ground floor, Ubuntu for example, then a Python container like the first floor, and on the top your Python application like the second floor. 
-
-The containerisation idea has become so popular that there are plenty of web pages with many already built images for you, like https://hub.docker.com/. In all of these cases there is no need to build everything from the ground, it's already there. And if you want to build your own image and container, the good starting point is to use one of these.
-![DockerHub search page](./dockerhub.png "DockerHub images for programming languages")
-
-Let's go step by step and learn how to use them. In the following pages we are going to discuss
-- Installation
-- etc
-
 
 # Installation
 
