@@ -31,6 +31,8 @@ The containerisation idea has become so popular that there are plenty of web pag
 Let's go step by step and learn how to use them. In the following pages we are going to discuss
 - [Installation](#installation)
 - [Using Python in the container](./Docker2.md)
+- [Install and use numpy in the python container](./Docker3.md)
+- [Build your own container with all the required packages installed](./Docker4.md)
 
 ---
 
@@ -51,7 +53,7 @@ Let's go step by step and learn how to use them. In the following pages we are g
    sudo apt-get update
    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
-2. Verify that the Docker Engine installation is successful by running the hello-world image
+1. Verify that the Docker Engine installation is successful by running the hello-world image
 ```bash
 sudo docker run hello-world
 ```
