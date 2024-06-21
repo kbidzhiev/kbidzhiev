@@ -12,7 +12,7 @@ Docker is a tool designed to package software into containers, effectively virtu
 # Some terminology
 In the next sections you are going to hear about:
   - docker image\
-      it is an instruction or blueprint for building a corresponding docker container.
+      it is a detailed instruction or blueprint for building a corresponding docker container.
   - docker container\
       "zipped" software, e.g python application, or python as a language, or OS, like Linux
 
