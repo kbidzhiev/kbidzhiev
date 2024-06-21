@@ -90,7 +90,7 @@ Congratulations, docker is installed on your machine.
 
 Execution command might not simply run without `sudo`
 ```bash
-docker ps #Process Status lists all the containers 
+docker ps  # Process Status lists all the containers 
 ```
 gives the error
 

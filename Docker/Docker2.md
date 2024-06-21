@@ -109,13 +109,13 @@ docker run -it python:3.9-bookworm
 
 All of the containers above, if not used, can be deleted with
 ```bash
-docker rm container_id
-# docker rm 3978e2e905d1
+# docker rm container_id
+docker rm 3978e2e905d1
 ```
 or
 ```bash
-docker rm container_name
-# docker rm reverent_blackwell
+# docker rm container_name
+docker rm reverent_blackwell  # name are generated randomly. You can chose a name as well
 ```
 
 A container can be removed automatically after exiting, if you provide `docker run` with a corresponding command
