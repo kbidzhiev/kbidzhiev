@@ -1,8 +1,8 @@
-# The main idea
-Software instalation is cumbersome for big projects, especially when it requires additional technical knowledge more then `pip install ...`
-One of the solution is to pack the installed software into big "`zip`" file with all its dependencies, additional configurations and even OS. This "`zip`" strategy is called docker.
+# The main idea of Docker
+Software instalation is cumbersome for big projects, especially when it requires additional technical knowledge above `pip install`.
+One of the solutions is to pack the installed software version into big "zip" file with all its dependencies, additional configurations and even OS. This "zipping" idea is called docker.
 
-Docker is a tool designed to package software into containers, effectively virtualizing the operating system. Each container acts as an isolated sandbox. Here I'm going to follow notes from Internet.
+Docker is a tool designed to package software into containers, effectively virtualizing the operating system. Each container acts as an isolated sandbox. Here I'm going to explain docker basics using the notes from Internet.
 - [https://www.youtube.com/@TechWorldwithNana/videos](https://www.youtube.com/@TechWorldwithNana/videos)
 - [https://docker-curriculum.com/](https://docker-curriculum.com/)
 - [https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
@@ -10,16 +10,20 @@ Docker is a tool designed to package software into containers, effectively virtu
 
 
 # Some terminology
-You are going to hear about:
+In the next sections you are going to hear about:
   - docker image\
-      it is an instruction == blueprint for building a corresponding docker container
+      it is an instruction or blueprint for building a corresponding docker container.
   - docker container\
-      "zipped" software, e.g python application, python language or OS
+      "zipped" software, e.g python application, or python as a language, or OS, like Linux
 
-Containers can be stacked on top of each other like LEGO building blocks. First, an OS container like the ground floor, Ubuntu for example, then a Python container like the first floor, and on the top your Python application like the second floor. 
+Containers can be stacked on top of each other like LEGO building blocks. First, consider an OS container as the ground floor, Ubuntu for example. Then, a Python container serves as the first floor, and on the top, your Python application acts as the second floor.
 
-The containerisation idea has become so popular that there are plenty of web pages with many already built images for you, like [https://hub.docker.com/](https://hub.docker.com/). In all of these cases there is no need to build everything from the ground, it's already there. And if you want to build your own image and container, the good starting point is to use one of these.
-![DockerHub search page](./dockerhub.png "DockerHub images for programming languages")
+<img src="./dockerhub.png" alt="DockerHub images for programming languages" width="500" height="300" style="float: right; margin-right: 10px;">
+
+The containerisation idea has become so popular that there are plenty of web pages with many already built images for you, like [https://hub.docker.com/](https://hub.docker.com/). In all of these cases there is no need to build everything from the ground, it's already there. A container on the top of the stack knows which container to pull next in this "chain reaction". And if you want to build your own image and container, the good starting point is to use one of these ones from the picture above.
+
+
+
 
 Let's go step by step and learn how to use them. In the following pages we are going to discuss
 - Installation
@@ -80,9 +84,9 @@ For more examples and ideas, visit:
 
 Congratulations, docker is installed on your machine via `apt`.
 
-Execution command doesn't simply run without `sudo`
+Execution command might not simply run without `sudo`
 ```bash
-docker ps
+docker ps #Process Status lists all the containers 
 ```
 Gives the error
 ```text
