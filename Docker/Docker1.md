@@ -33,7 +33,7 @@ Let's go step by step and learn how to use them. In the following pages we are g
 
 # Installation
 
-1. Setting up a docker repo:
+1. Setting up a docker repo and installing the Docker packages:
 ```bash
    sudo apt-get update
    sudo apt-get install ca-certificates curl
@@ -45,12 +45,9 @@ Let's go step by step and learn how to use them. In the following pages we are g
      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
    sudo apt-get update
-```
-2. Install the Docker packages
-```bash
    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
-3. Verify that the Docker Engine installation is successful by running the hello-world image
+2. Verify that the Docker Engine installation is successful by running the hello-world image
 ```bash
 sudo docker run hello-world
 ```
@@ -83,13 +80,13 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
 
-Congratulations, docker is installed on your machine via `apt`.
+Congratulations, docker is installed on your machine.
 
 Execution command might not simply run without `sudo`
 ```bash
 docker ps #Process Status lists all the containers 
 ```
-Gives the error
+gives the error
 ```text
 permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.45/containers/json": dial unix /var/run/docker.sock: connect: permission denied
 ```
