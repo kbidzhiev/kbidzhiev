@@ -67,3 +67,6 @@ docker run -it python:3.9-bookworm bash
 # OR
 # docker run -it python:3.9-bookworm /bin/sh  # for shell if usual bash is not installed 
 ```
+
+Now let's install `numpy` and run some calculations
+[Installing numpy](./Docker3.md) 
