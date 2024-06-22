@@ -100,14 +100,17 @@ The same image `python:3.9-bookworm` created several containers. One on the top 
 ```bash
 docker run -it python:3.9-bookworm bash
 ```
-and "COMMAND" indicated the entrypoint command that runs container
+and "COMMAND" indicates the entrypoint command that runs container.
 Others were executed without explicitly mentioning `bash` as the entrypoint 
 ```bash
 docker run -it python:3.9-bookworm
 ```
 "COMMAND" shows `python3` which is the default entrypoint, as I mentioned when discussing option `CMD ["python3"]` in the Dockerfile.
 
-All of the containers above, if not used, can be deleted with
+Tip:\
+Using the `-it` option allows you to reuse the container later. Without it, future attempts to start the container will result in it immediately closing. This is expected behavior because the computer starts Python in the container, receives no further commands, and exits successfully. Remember to include `-it` with `docker run` for interactive terminal containers.
+
+All of the containers above, if not used, can be deleted after with
 ```bash
 # docker rm container_id
 docker rm 3978e2e905d1
@@ -118,9 +121,17 @@ or
 docker rm reverent_blackwell  # name are generated randomly. You can chose a name as well
 ```
 
-A container can be removed automatically after exiting, if you provide `docker run` with a corresponding command
+A container can be removed automatically after exiting, if you provide `docker run` with a corresponding command `--rm`
 ```bash
 docker run --rm -it python:3.9-bookworm bash  # --rm means remove after exiting
+```
+
+In contrast, containers that are not removed can be reused. To start the container
+```bash
+#docker start container_id 
+#docker exec -it container_id bash
+docker start 3978e2e905d1  # container_id can be obtained from docker ps -a
+docker exec -it 3978e2e905d1 bash  # or /bin/bash or /bin/sh for the old school shell 
 ```
 
 

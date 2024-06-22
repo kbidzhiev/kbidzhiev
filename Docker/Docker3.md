@@ -1,6 +1,6 @@
 # Python Packages Installation in the Container
 
-Running the following command will start a container and open a Bash shell:
+Running the following command will build a container and open a Bash shell:
 ```bash
 docker run -it python:3.9-bookworm bash
 ```
@@ -43,3 +43,18 @@ Inside the Python interpreter:
 import numpy as np
 np.random.rand(3, 2)  # Creates a 3x2 matrix
 ```
+
+# WRITE HERE SOME SMALL SCRIPT THAT I WANT TO DEMONSTRATE
+Now we can execute a python script in a commonly used way. For a sake of simplicity the scipt reads an vector from standard input and outputs norm of the vector:
+```python
+import numpy as np
+
+input_str = input("Enter the elements of the 1D array separated by spaces: ")
+array = np.array([float(x) for x in input_str.split()])
+norm = np.linalg.norm(array)
+print(f"The norm of the array is: {norm}")
+```
+
+Unfortunately, any progress made within the container, such as installing numpy, creating folders, or adding files, will be lost upon the next run of the container. Changes are not stored by default. So, how can we preserve these changes? Let's find out.
+
+[Creating your own container](./Docker4.md)
