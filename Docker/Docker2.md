@@ -103,7 +103,7 @@ docker run -it python:3.9-bookworm bash
 and "COMMAND" indicates the entrypoint command that runs container.
 Others were executed without explicitly mentioning `bash` as the entrypoint 
 ```bash
-docker run -it python:3.9-bookworm
+docker run -it python:3.9-bookworm  # not always the best practice
 ```
 "COMMAND" shows `python3` which is the default entrypoint, as I mentioned when discussing option `CMD ["python3"]` in the Dockerfile.
 
@@ -128,12 +128,25 @@ docker run --rm -it python:3.9-bookworm bash  # --rm means remove after exiting
 
 In contrast, containers that are not removed can be reused. To start the container
 ```bash
-#docker start container_id 
-#docker exec -it container_id bash
+# docker start container_id
 docker start 3978e2e905d1  # container_id can be obtained from docker ps -a
-docker exec -it 3978e2e905d1 bash  # or /bin/bash or /bin/sh for the old school shell 
 ```
-
+access to bash
+```bash
+# docker exec -it container_id Executable
+# execute a non default command
+docker exec -it 3978e2e905d1 bash  # or /bin/bash to get access to bash
+```
+or run a python script 
+```bash
+# docker exec -it container_id Executable parameter1 parameter2
+docker exec -it 3978e2e905d1 python /path_to/folder/my_script.py
+```
+Later, after use of the container, `exit` and stop it
+```bash
+#docker stop container_id
+docker stop 3978e2e905d1
+```
 
 
 Now let's install `numpy` and run some calculations

@@ -44,8 +44,14 @@ import numpy as np
 np.random.rand(3, 2)  # Creates a 3x2 matrix
 ```
 
-# WRITE HERE SOME SMALL SCRIPT THAT I WANT TO DEMONSTRATE
-Now we can execute a python script in a commonly used way. For a sake of simplicity the scipt reads an vector from standard input and outputs norm of the vector:
+## Python script
+Surprisingly, a basic Linux container might not have a text editor installed. Install one, for instance `vim`.
+```bash
+apt-get update  # Updates the package list so the system knows which packages are available.
+apt-get install vim  # If you are not familiar with VIM, make sure to learn the basics.
+# Just in case, ZQ quits from VIM :)
+```
+Now we can execute a Python script in the usual manner. For simplicity, the script reads a vector from standard input and outputs the norm of the vector:
 ```python
 import numpy as np
 
@@ -54,7 +60,24 @@ array = np.array([float(x) for x in input_str.split()])
 norm = np.linalg.norm(array)
 print(f"The norm of the array is: {norm}")
 ```
+The code above should be put into a file `norm.py` and executed within the container
+```bash
+python /home/mypyproject/norm.py
+```
+Similarly, the same script can be called outside from the container.
+```bash
+# docker exec -it container_id Executable parameter1 parameter2
+# this part needs activation of the environment
+docker exec -it 3978e2e905d1 python /home/mypyproject/norm.py
+```
+or more explicitly
+```bash
+docker exec -it serene_kare bash -c "source /app/venv/bin/activate && python /home/mypyproject.py"
+```
 
-Unfortunately, any progress made within the container, such as installing numpy, creating folders, or adding files, will be lost upon the next run of the container. Changes are not stored by default. So, how can we preserve these changes? Let's find out.
 
-[Creating your own container](./Docker4.md)
+
+Unfortunately, any progress made within the container, such as installing numpy, creating folders, or adding files, cannot be saved into the image. This means that you cannot share your progress with colleagues because containers are not designed to be shared. But images are.
+On the next page we are going to find out how to make your own image.
+
+[Creating your own image](./Docker4.md)

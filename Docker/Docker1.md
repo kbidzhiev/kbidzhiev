@@ -8,13 +8,30 @@ Docker is a tool designed to package software into containers, effectively virtu
 - [https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
 
 
+# Terminology: docker container and docker image
+In the next sections you are going to read about docker images and docker containers.
 
-# Some terminology
-In the next sections you are going to hear about:
-  - docker image\
-      it is a detailed instruction or blueprint for building a corresponding docker container.
-  - docker container\
-      "zipped" software, e.g python application, or python as a language, or OS, like Linux
+## Docker Image
+<a href="https://phoenixnap.com/kb/docker-image-vs-container" target="Docker">
+   <img src="./image_vs_container.png" alt="DockerHub images and containers" width="330" height="250" style="float: right; margin-right: 10px;">
+</a>
+
+A Docker image is a lightweight, standalone, and immutable file that contains the instructions and dependencies needed to create a Docker container.
+  - Purpose: It serves as a template for creating containers, similar to a snapshot of a virtual machine or a software package.
+  - State: Read-only and static.
+
+## Docker Container
+
+A Docker container is an instance of a Docker image that runs as an isolated and executable unit of software.
+- Purpose: It is used to run applications or services, encapsulating the environment in which they run.
+- State: Read-write and dynamic; changes can be made during runtime.
+
+### Summary
+
+- Image: Blueprint/template (read-only, static).
+- Container: Running instance based on the image (read-write, dynamic).
+"zipped" software, e.g python application, or python as a language, or OS, like Linux.
+
 
 <a href="https://hub.docker.com/search?q=&image_filter=official&categories=Languages%20%26%20Frameworks" target="Docker Hub">
    <img src="./dockerhub.png" alt="DockerHub images for programming languages" width="350" height="300" style="float: right; margin-right: 10px;">
