@@ -145,4 +145,8 @@ Now we can commit the changes.
 
 ![new action](./new_action.png)
 
-Now the `pyvectorSDK` is automatically tested and it's DOckerHub image is updatedo
+Now the `pyvectorSDK` is automatically tested and it's DOckerHub image is updated.
+
+
+Previous\
+[Docker page 5. Jupyter notebook based on your package](./Docker5.md)

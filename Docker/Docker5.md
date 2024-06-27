@@ -161,6 +161,7 @@ vectorSDK/
 ├── vectorSDK/
 ├── tests/
 ├── setup.py
+├── requirements.txt
 ├── Dockerfile
 ```
 run 
