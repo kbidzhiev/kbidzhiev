@@ -80,4 +80,8 @@ docker exec -it serene_kare bash -c "source /app/venv/bin/activate && python /ho
 Unfortunately, any progress made within the container, such as installing numpy, creating folders, or adding files, cannot be saved into the image. This means that you cannot share your progress with colleagues because containers are not designed to be shared. But images are.
 On the next page we are going to find out how to make your own image.
 
-[Creating your own image](./Docker4.md)
+Next\
+[Docker page 4. Creating your own image](./Docker4.md)
+
+Previous\
+[Docker page 2. Using Python in the container](./Docker2.md)

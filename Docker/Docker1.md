@@ -123,5 +123,8 @@ now the command should work
 docker ps
 ```
 
-
+Next:\
 [Docker page 2. Using Python in the container](./Docker2.md)
+
+Previous page:\
+[Main](../index.md)

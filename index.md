@@ -10,5 +10,6 @@
  -  [Example with a Python container](./Docker/Docker2.md)
  -  [Installing numpy in a Python container](./Docker/Docker3.md)
  -  [Creating your own image](./Docker/Docker4.md)
+ -  [Jupyter notebook based on your package](./Docker/Docker5.md)
 
 ## News:

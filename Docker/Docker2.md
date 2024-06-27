@@ -150,4 +150,10 @@ docker stop 3978e2e905d1
 
 
 Now let's install `numpy` and run some calculations
-[Installing numpy](./Docker3.md) 
+
+
+Next page
+[Docker page 3. Installing numpy](./Docker3.md)
+
+Previous page
+[Docker page 1. Using Python in the container](./Docker2.md)

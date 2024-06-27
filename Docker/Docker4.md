@@ -87,3 +87,9 @@ Now execute
 docker run --rm -it vector_norm:1.0 # --rm removes the container after usage
 ```
 to build a container from the image and run the python code 
+
+Next\
+[Docker page 5](./Docker5.md)
+
+Previous\
+[Docker page 3](./Docker3.md)
