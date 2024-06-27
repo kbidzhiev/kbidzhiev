@@ -126,12 +126,23 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: docker pull kemalbidzhiev/pyvectorsdk:1.0
+          tags: docker pull kemalbidzhiev/pyvectorsdk:latest
 ```
 
-Pay attention on the last parts. In the `tags` part we replaced  `user/app:latest` by address of the Docker hub repo `kemalbidzhiev/pyvectorsdk:1.0`.
+Pay attention on the last parts. In the `tags` part we replaced  `user/app:latest` by address of the Docker hub repo `kemalbidzhiev/pyvectorsdk:latest`.
 What are `secrets` ? Github allows you to syncronize the development tools. Dockerhub can generate a username and a key for you and GitHub will use it to automatically login and push the image. 
 
 ![github secrets](./secrets_guthub.png)
 
-Open "Settings" in a new tab, on the left hand side find "Secrets and variables", chose actions and press "new repository secter"
+Open "Settings" in a new tab, on the left hand side find "Secrets and variables", chose actions and press "new repository secret".\
+The name should be `DOCKERHUB_USERNAME` and secret is your dockerhub name, for me it's `kemalbidzhiev`. Save it. 
+
+Where to find a password ? Do you remember, we generated a password on DOckerHub ? it's exactly that. Go to the DockerHub > Account Settings > Security > New access token > give a name "github token". It will generate you a password. Now copy it to the github secrets.\
+The name should be `DOCKERHUB_TOKEN` and the secret is a generated password. 
+![generated secret](./secret_generated.png)
+
+Now we can commit the changes.
+
+![new action](./new_action.png)
+
+Now the `pyvectorSDK` is automatically tested and it's DOckerHub image is updatedo
