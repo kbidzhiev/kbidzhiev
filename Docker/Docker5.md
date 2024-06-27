@@ -160,7 +160,7 @@ Now run the image
 ```bash
 docker run --rm -p 8888:8888 myjupyter:1.0
 ```
-what is `-p 8888:8888`? Jupyter notebooks usually are designed as a webpages that you can run on your local computer. The address of that webpage is `8888` by default, which is reflected in the second part `:8888` and also in the dockerfile `EXPOSE 8888`. The container says "if you want to use me as a web server, I'm accessible with the address `8888`". The first part of `8888:` is saying which address of our computer we use to connect to the `myjupyter:1.0` container. All together it read "port connect_with:connect_to" `-p 8888:8888`. It's not necessary to use `8888:` it might be occupied by other service. So you can change it to any other number. I personally change it to `8889:` or `10000:`.
+We already know that `--rm` removes the container after usae. What is `-p 8888:8888`? Jupyter notebooks usually are designed as a webpages that you can run on your local computer. The address of that webpage is `8888` by default, which is reflected in the second part `:8888` and also in the dockerfile `EXPOSE 8888`. The container says "if you want to use me as a web server, I'm accessible with the address `8888`". The first part of `8888:` is saying which address of our computer we use to connect to the `myjupyter:1.0` container. All together it read "port connect_with:connect_to" `-p 8888:8888`. It's not necessary to use `8888:` it might be occupied by other service. So you can change it to any other number. I personally change it to `8889:` or `10000:`.
 
 After executing the command above you should get
 ![run_jupyter](./connecting.jpg)
@@ -168,3 +168,6 @@ After executing the command above you should get
 Click on the line, or copy-paste it to the browser. And voila
 
 ![jupyter_notebook](./jupyter_notebook.png)
+Jupyter notebook where you can test your package `pyvectorSDK`
+
+![pyvectorSDK](./vectorSDK.png)
