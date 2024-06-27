@@ -12,6 +12,7 @@ vectorSDK/
 │   ├── __init__.py
 │   ├── test_lnorm.py
 │   └── test_sdk.py
+├── requirements.txt
 ├── setup.py
 ├── Dockerfile
 ```
@@ -66,21 +67,31 @@ The setup file contains
 # setup.py
 from setuptools import setup, find_packages
 
+def read_requirements():
+    with open('requirements.txt') as req:
+        content = req.read()
+        requirements = content.split('\n')
+    return requirements
+
 setup(
-    name='vectorSDK',
+    name='pyvectorSDK',
     version='0.1.0',
     packages=find_packages(),
-    install_requires=[
-        'numpy'  # our package uses Numpy, here you can include other packages
-    ],
+    install_requires=read_requirements()
 )
+```
+with package requirements.txt
+```
+numpy==1.26
+pytest==8.2
 ```
 And the tests\
 `tests/test_lnorm.py` :
 ```python
 # tests/test_lnorm.py
-from vectorSDK.lnorm import compute_l_p_norm, sort
+from pyvectorSDK.lnorm import compute_l_p_norm, sort
 import numpy as np
+import pytest
 
 def test_compute_l_p_norm():
     vec = np.array([3, 4])
@@ -98,7 +109,7 @@ def test_sort():
 `tests/test_sdk.py` :
 ```python
 # tests/test_sdk.py
-from vectorSDK.sdk import vectorSDK
+from pyvectorSDK.sdk import vectorSDK
 
 def test_compute_norm():
     vec = vectorSDK([3, 4])
@@ -118,7 +129,10 @@ Docker file for Jupyter notebook is fully based on the previous [example](./Dock
 
 # Jupyter images recently moved from DockerHub server to RedHat 'quay'
 # we reflect that in the address. Image is pulled from the webpage 'quay.io'
-FROM quay.io/jupyter/base-notebook 
+# FROM quay.io/jupyter/base-notebook 
+
+# Or use the one from docker hub
+FROM jupyter/base-notebook
 
 # change user to ROOT to get installation permission on the image
 USER root
@@ -171,3 +185,10 @@ Click on the line, or copy-paste it to the browser. And voila
 Jupyter notebook where you can test your package `pyvectorSDK`
 
 ![pyvectorSDK](./vectorSDK.png)
+
+
+Next\
+[Sharing and testing your container](./Docker6.md)
+
+Previous\
+[Creating your own image](./Docker4.md)
