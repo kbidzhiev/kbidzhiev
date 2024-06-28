@@ -163,9 +163,50 @@ plt.figure(figsize=(10, 6))
 plt.plot(p_values, norm_values, marker='o')
 plt.xlabel('p value')
 plt.ylabel('Norm')
-plt.title('Norm of the vector for different p values')
+plt.title('$l_p $orm of the vector for different p values')
 plt.grid(True)
 
 # Display the plot
 st.pyplot(plt)
 ```
+
+Just for fun I want to demonstrate how unit disk behaves under different p for $l_p$ norm
+```python
+st.subheader('Unit disk for $l_p$ norms')
+# Plotting x = p values, y = norms for different p values
+p_values = [i / 10.0 for i in range(5, 51)]  # Generate p values from 0.5 to 10.0
+norm_values = [vector.compute_norm(p) for p in p_values]  # Compute corresponding norms
+
+# Create the plot for norms
+plt.figure(figsize=(10, 6))
+plt.plot(p_values, norm_values, marker='o')
+plt.xlabel('p value')
+plt.ylabel('Norm')
+plt.title('$l_p$ norm of the vector for different p values')
+plt.grid(True)
+st.pyplot(plt)
+
+
+
+# Slider to select the value of p for plotting functions
+p_value_plot = st.slider('Select the value of p for plotting functions:', min_value=0.1, max_value=10.0, value=2.0, step=0.1)
+x_values = np.linspace(-1, 1, 400)  # Generate x values from -1 to 1
+y1_values = [(1 - abs(x)**p_value_plot)**(1/p_value_plot) if abs(x)**p_value_plot <= 1 else 0 for x in x_values]
+y2_values = [-(1 - abs(x)**p_value_plot)**(1/p_value_plot) if abs(x)**p_value_plot <= 1 else 0 for x in x_values]
+
+# Create the plot for y(p) functions
+plt.figure(figsize=(10, 6))
+plt.plot(x_values, y1_values, label='y(p) = (1 - |x|^p)^(1/p)')
+plt.plot(x_values, y2_values, label='y(p) = -(1 - |x|^p)^(1/p)')
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Plot of y(p) = (1 - |x|^p)^(1/p) and y(p) = -(1 - |x|^p)^(1/p)')
+plt.legend()
+plt.grid(True)
+
+# Display the plot
+st.pyplot(plt)
+```
+
+The main page will have a following form
+![min_page](./main_page.png)
