@@ -14,7 +14,8 @@
  -  [Jupyter notebook based on your package](./Docker/Docker5.md)
  -  [Sharing and testing your container. CI/CD](./Docker/Docker6.md)
 
-[Streamlit](./Streamlit/Streamlit1.md)
-Streamlit VectorSDK [application link](https://kbidzhiev-demostreamlit-main-sh3xi4.streamlit.app/)
+[Builing a Streamlit application](./Streamlit/Streamlit1.md)
+
+Streamlit VectorSDK [application link](https://kbidzhiev-demostreamlit-main-sh3xi4.streamlit.app/) on a remote server
 
 
