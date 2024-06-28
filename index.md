@@ -12,7 +12,7 @@
  -  [Installing numpy in a Python container](./Docker/Docker3.md)
  -  [Creating your own image](./Docker/Docker4.md)
  -  [Jupyter notebook based on your package](./Docker/Docker5.md)
- -  [Sharing and testing your container. CI/CD](./Docker6.md)
+ -  [Sharing and testing your container. CI/CD](./Docker/Docker6.md)
 
 [Streamlit](./Streamlit/Streamlit1.md)
 ## News:
