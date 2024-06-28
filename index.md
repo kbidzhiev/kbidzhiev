@@ -15,4 +15,6 @@
  -  [Sharing and testing your container. CI/CD](./Docker/Docker6.md)
 
 [Streamlit](./Streamlit/Streamlit1.md)
+Resulting [application link](https://kbidzhiev-demostreamlit-main-sh3xi4.streamlit.app/)
 ## News:
+
