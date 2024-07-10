@@ -1,6 +1,6 @@
 # SDK and Jupyter notebook
 
-Lets generalise the example to l_p norm ||x||_p = (\sum_i |x_i|^p)^{1/p} and convert the script `norm.py` to a meaningful small package prototype. Later we will generalise it into a package.
+Lets generalise the example to $l_p$ norm $x_p = (\sum_i x_i^p)^{1/p}$ and convert the script `norm.py` to a meaningful small package prototype. Later we will generalise it into a package.
 
 ```
 vectorSDK/
