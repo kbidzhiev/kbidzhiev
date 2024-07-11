@@ -1,6 +1,6 @@
 # Tensor Network optimiser
 
-In the current series of articles, I describe step-by-step guide on designing an SDK around a scientific software package. As an example, I have chosen the [Tensor Train Optimiser (TTOpt)](https://github.com/AndreiChertkov/ttopt), in particular, this [use case](https://github.com/AndreiChertkov/ttopt/blob/master/demo/qtt_100d.py). The user inputs a function, that accepts a multidimensional array and returns a scalar value, in other words a single number.
+In the current series of articles, I describe step-by-step guide on designing an SDK around a scientific software package. As an example, I have chosen the [Tensor Train Optimiser (TTOpt)](https://github.com/AndreiChertkov/ttopt), in particular, this [use case](https://github.com/AndreiChertkov/ttopt/blob/master/demo/qtt_100d.py). We focus on the optimisation of multidimensional functions.
 
 ```math
 f: \mathbb{R}^d \rightarrow \mathbb{R}
@@ -10,7 +10,9 @@ f: \mathbb{R}^d \rightarrow \mathbb{R}
 
 The SDK is meant to be used as a simplified interface between the user and TTopt application.
 
-### Input from the user:
+### Input from the user
+User should specify which function wo optimise and a domain of search for minima.
+Detailed description of the input parameters:
 - `rank`: Rank of the tensor network approximation. Example: `rank = 4`.
 - `d`: Dimension of the function. Example: `d = 100`
 - `f`: Function for minimization. Example: `np.sum(np.abs(X * np.sin(X) + 0.1 * X), axis=1)`
@@ -23,16 +25,16 @@ The SDK is meant to be used as a simplified interface between the user and TTopt
 - `y_opt_real`: Anticipated real value of the result (y = f(x)) for the minima (single floating number). Optional. If this value is specified, it will be used to display the current approximation error within the algorithm iterations. Convenient for debugging and testing
 
 ### Output
-Optimizer returns 3 values:
+Optimizer returns 3 values -- `x_min, y_min, search_info`:
 ```python
-x_min, y_min, convergence_info = optimize(...)
+x_min, y_min, search_info = optimize(...)
 ```
 - `x_min`: The found value of the minimum of the function
 - `y_min`: The found value of the minimum of the function y_min=f(x_min).
-`convergence_info` has
-- `convergence_info.n_chache_usage`: Total number of cache usage
-- `convergence_info.n_requests`: Total number of requests (n_chache_usage + n_func_requests)
-- `convergence_info.t_average`: Average time spent to real function call for 1 point
+The field `search_info` has
+- `search_info.n_chache_usage`: Total number of cache usage
+- `search_info.n_requests`: Total number of requests (n_chache_usage + n_func_requests)
+- `search_info.t_average`: Average time spent to real function call for 1 point
 
 
 [Page 1. Creating a python SDK package](./ttopt1.md)
