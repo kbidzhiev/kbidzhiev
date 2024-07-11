@@ -34,8 +34,8 @@ x_min, y_min, search_info = optimize(...)
 - `y_min`: The found value of the minimum of the function y_min=f(x_min).
 The field `search_info` has
 - `search_info.n_chache_usage`: Total number of cache usage
-- `search_info.n_requests`: Total number of requests (n_chache_usage + n_func_requests)
 - `search_info.t_average`: Average time spent to real function call for 1 point
+- `search_info.total`: Total information about search -- function_name, n_evalueations, time_all, error_x, error_y
 
 
 [Page 1. Creating a python SDK package](./ttopt1.md)
