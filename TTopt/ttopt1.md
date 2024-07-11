@@ -32,11 +32,10 @@ setup(
 )
 ```
 
-In the main file `sdk.py` I gather all the parameters
+In the main file `sdk.py` I gather all the parameters of chosen example [qtt_100d](https://github.com/AndreiChertkov/ttopt/blob/master/demo/qtt_100d.py).
 ```python
 # sdk.py
-def f(X):                   # Target function
-    return np.sum(np.abs(X * np.sin(X) + 0.1 * X), axis=1)
+from ttopt import TTOpt
 
 def optimize(
     rank,
@@ -47,9 +46,10 @@ def optimize(
     p_grid_factor,
     q_grid_factor,
     n_evals,
-    name='Alpine',
     x_opt_real=None,
-    y_opt_real=None
+    y_opt_real=None,
+    name='Alpine',
+    with_log=False,
     ):
 
     tto = TTOpt(
@@ -60,20 +60,20 @@ def optimize(
     p=p_grid_factor,
     q=q_grid_factor,
     evals=n_evals,
-    name=name,
     x_opt_real=x_opt_real,
     y_opt_real=y_opt_real,
-    with_log=True)
+    name=name,
+    with_log=with_log)
 
     tto.optimize(rank)
 
     x_min = tto.x_opt
     y_min = tto.y_opt
     n_chache_usage = tto.k_cache
-    n_requests = tto.k_total
     t_average = tto.t_evals_mean
 
     assert tto.k_evals == n_evals
+    total = tto.info()
 
-    return x_min, y_min, (n_chache_usage, n_func_requests, t_average)
+    return x_min, y_min, (n_chache_usage, t_average, total)
 ```
