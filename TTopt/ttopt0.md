@@ -30,7 +30,7 @@ Optimizer returns 3 values -- `x_min, y_min, search_info`:
 ```python
 x_min, y_min, search_info = optimize(...)
 ```
-- `x_min`: The found value of the minimum of the function
+- `x_min`: The found argument of the minimum 
 - `y_min`: The found value of the minimum of the function y_min=f(x_min).
 The field `search_info` has
 - `search_info.n_chache_usage`: Total number of cache usage
