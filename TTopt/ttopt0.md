@@ -11,7 +11,8 @@ f: \mathbb{R}^d \rightarrow \mathbb{R}
 The SDK is meant to be used as a simplified interface between the user and TTopt application.
 
 ### Input from the user
-User should specify which function wo optimise and a domain of search for minima.
+`function` to optimise and a `domain of search` for minima should be specified by user
+
 Detailed description of the input parameters:
 - `rank`: Rank of the tensor network approximation. Example: `rank = 4`.
 - `d`: Dimension of the function. Example: `d = 100`
