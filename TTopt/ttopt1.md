@@ -77,3 +77,6 @@ def optimize(
 
     return x_min, y_min, (n_chache_usage, t_average, total)
 ```
+
+
+The file with `test_sdk.py` can be organized, for example, as in [here](https://github.com/kbidzhiev/TToptSDK/blob/main/tests/test_sdk.py). 
