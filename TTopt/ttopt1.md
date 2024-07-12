@@ -14,7 +14,7 @@ ttoptSDK/
 
 I put the actual code in the `sdk.py`. In the file `test_sdk.py` I write a set of tests to check the code in the `sdk.py`.
 
-Python technical files `__init__.py` are left empty.
+
 In the `setup.py` we put minimal required info:
 ```python
 # setup.py
@@ -25,7 +25,7 @@ setup(
     version='0.1',
     packages=find_packages(),
     install_requires=[
-        pip install ttopt==0.6.2
+        "ttopt==0.6.2",
     ],
     setup_requires=['pytest-runner'],
     tests_require=['pytest']
@@ -69,5 +69,10 @@ def optimize(
     return x_min, y_min, (n_chache_usage, t_average, total)
 ```
 
+In the tecknical file `__init__.py` we can put information which function to export or make visible
+```python
+# __init__.py
+from .sdk import optimize
+```
 
 The file with `test_sdk.py` can be organized, for example, as in [here](https://github.com/kbidzhiev/TToptSDK/blob/main/tests/test_sdk.py). 
