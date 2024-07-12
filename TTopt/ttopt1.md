@@ -83,7 +83,7 @@ from .sdk import optimize
 The file with `test_sdk.py` can be organized, for example, as in [here](https://github.com/kbidzhiev/TToptSDK/blob/main/tests/test_sdk.py).
 
 
-# CI/CD for the package.
+# CI/CD for the package
 ## CI part
 Next steps in the articles will continue and use part of["Docker from zero to hero"](../Docker/Docker1.md).
 
@@ -152,3 +152,15 @@ Example of usage :
 ![jupyter_with_ttoptSDK](./jupyter.png)
 
 
+### Pushing to Dockerhub
+the last step for implementing continuous deployment is to push the developed image to Dockerhub.
+Dockerhub suggests to rename the local image, such that it will fit your dockerhub account address and then push it to the server.
+```bash
+docker tag ttoptsdk:1.0 kemalbidzhiev/ttoptsdk:1.0 
+docker push kemalbidzhiev/ttoptsdk:1.0
+```
+It might take some time.
+
+
+
+[Page 3. Basic web interface](./ttopt2.md)
