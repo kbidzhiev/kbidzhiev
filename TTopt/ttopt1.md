@@ -1,6 +1,6 @@
 # Designing an SDK for TTopt
 
-Lets first design a small Python package **template** of the following structure
+Lets first design a small Python package of the following structure
 ```
 ttoptSDK/
 ├── ttoptSDK/
@@ -31,39 +31,30 @@ setup(
     tests_require=['pytest']
 )
 ```
+### The main code skd.py
 
 In the main file `sdk.py` I gather all the parameters of chosen example [qtt_100d](https://github.com/AndreiChertkov/ttopt/blob/master/demo/qtt_100d.py).
+This design allows to external user 
+
+
 ```python
 # sdk.py
 from ttopt import TTOpt
 
 def optimize(
-    rank,
-    d,
-    f,
-    lower_grid_bound,
-    upper_grid_bound,
-    p_grid_factor,
-    q_grid_factor,
-    n_evals,
-    x_opt_real=None,
-    y_opt_real=None,
-    name='Alpine',
-    with_log=False,
+    rank, d, f,
+    lower_grid_bound, upper_grid_bound,
+    p_grid_factor, q_grid_factor, n_evals,
+    x_opt_real=None, y_opt_real=None,
+    name='Alpine', with_log=False,
     ):
 
     tto = TTOpt(
-    f=f,
-    d=d,
-    a=lower_grid_bound,
-    b=upper_grid_bound,
-    p=p_grid_factor,
-    q=q_grid_factor,
-    evals=n_evals,
-    x_opt_real=x_opt_real,
-    y_opt_real=y_opt_real,
-    name=name,
-    with_log=with_log)
+    f=f, d=d,
+    a=lower_grid_bound, b=upper_grid_bound,
+    p=p_grid_factor, q=q_grid_factor, evals=n_evals,
+    x_opt_real=x_opt_real, y_opt_real=y_opt_real,
+    name=name, with_log=with_log)
 
     tto.optimize(rank)
 
