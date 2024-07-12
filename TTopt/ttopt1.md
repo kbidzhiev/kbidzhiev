@@ -45,8 +45,8 @@ def optimize(
     rank, d, f,
     lower_grid_bound, upper_grid_bound,
     p_grid_factor, q_grid_factor, n_evals,
-    x_opt_real=None, y_opt_real=None,
     name='Alpine', with_log=False,
+    x_opt_real=None, y_opt_real=None,
     ):
 
     tto = TTOpt(
