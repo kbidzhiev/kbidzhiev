@@ -22,4 +22,5 @@ Streamlit VectorSDK [application link](https://kbidzhiev-demostreamlit-main-sh3x
 
 
 [Tensor optimiser](./TTopt/ttopt0.md)
+
 [TensorOptimiserStreamlit](https://kbidzhiev-ttoptsdk-streamlit-main-iwsjnq.streamlit.app)
