@@ -84,6 +84,7 @@ The file with `test_sdk.py` can be organized, for example, as in [here](https://
 
 
 # CI/CD for the package.
+## CI part
 Next steps in the articles will continue and use part of["Docker from zero to hero"](../Docker/Docker1.md).
 
 The developed `ttoptSDK` package can be integrated to the framework of automatic benchmarking, called "Continuous integration/Continuous development".
@@ -96,5 +97,58 @@ GitHub suggests a `.yml` file which instructs github remote computers-servers wi
 
 
 Now the automatic testing is implemented in the repo. This happened because of the test files in [ttoptSDK/tests/](https://github.com/kbidzhiev/TToptSDK/tree/main/tests)
+
+
+## CD part
+Continuos deployment assumes usually that the last version of the product is deployed and works. As a working solution we share a docker image, that scientist can install and use.
+
+### Docker
+Docker system allows to containerize the SDK solution that we developed into a portable docker image. To do so, one should write a set of instructions, called "Dockerfile".
+
+```Dockerfile
+# Dockerfile
+FROM python:3.12-bookworm
+
+RUN mkdir -p /ttoptSDK
+WORKDIR /ttoptSDK
+COPY . .
+COPY ./examples/python/example1.py /home/
+COPY ./examples/python/example2.py /home/
+
+ENV VIRTUAL_ENV=/ttoptSDK/
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+WORKDIR /ttoptSDK
+RUN pip install -e .
+
+# Set the working directory in the container
+WORKDIR /home/
+# Run the application:
+CMD ["/bin/bash"]
+```
+
+
+Besides that I create a `Dockerfile` for jupyter notebooks to demonstrate that the application well integrates with other workflows.
+
+```Dockerfile
+# Dockerfile.jupyter
+FROM jupyter/base-notebook
+
+USER root
+COPY . /ttoptSDK
+RUN pip install /ttoptSDK
+# Switch back to the default user (jovyan is author of Jupyter images)
+USER $NB_USER
+EXPOSE 8888
+CMD ["start-notebook.sh"]
+```
+
+when building the image, don't forget specify the connection port, see an [example](https://kbidzhiev.github.io/Docker/Docker5.html).
+```bash
+docker run --rm -p 8888:8888 jupytersdk:1.0
+```
+Example of usage :
+![jupyter_with_ttoptSDK](./jupyter.png)
 
 
