@@ -1,6 +1,8 @@
 # Tensor Network optimiser
 
-In the current series of articles, I describe step-by-step guide on designing an SDK around a scientific software package. As an example, I have chosen the [Tensor Train Optimiser (TTOpt)](https://github.com/AndreiChertkov/ttopt), in particular, this [use case](https://github.com/AndreiChertkov/ttopt/blob/master/demo/qtt_100d.py). We focus on the optimisation of multidimensional functions.
+In the current series of articles, I describe step-by-step guide on designing an SDK around a scientific software package. Some steps continue and reiterate part of ["Docker from zero to hero"](../Docker/Docker1.md).
+
+As an example of a scientific software, I have chosen the [Tensor Train Optimiser (TTOpt)](https://github.com/AndreiChertkov/ttopt), in particular, this [use case](https://github.com/AndreiChertkov/ttopt/blob/master/demo/qtt_100d.py). We focus on the optimisation of multidimensional functions.
 
 ```math
 f: \mathbb{R}^d \rightarrow \mathbb{R}

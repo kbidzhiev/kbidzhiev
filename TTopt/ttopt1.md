@@ -84,7 +84,7 @@ The file with `test_sdk.py` can be organized, for example, as in [here](https://
 
 
 # CI/CD for the package.
-Next steps in the articles will continue and reiterate set of articles ["Docker from zero to hero"](../Docker/Docker1.md).
+Next steps in the articles will continue and use part of["Docker from zero to hero"](../Docker/Docker1.md).
 
 The developed `ttoptSDK` package can be integrated to the framework of automatic benchmarking, called "Continuous integration/Continuous development".
 GitHub simplified all the step, such that the most common and popular solutions are collected in Github actions. 
@@ -96,3 +96,5 @@ GitHub suggests a `.yml` file which instructs github remote computers-servers wi
 
 
 Now the automatic testing is implemented in the repo. This happened because of the test files in [ttoptSDK/tests/](https://github.com/kbidzhiev/TToptSDK/tree/main/tests)
+
+
